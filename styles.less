@@ -1,0 +1,103 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// style the background color of the tree view
+.tree-view {
+  font-size: 12px;
+  font-family: 'Ubuntu Mono';
+  background: black !important;
+
+  .icon:before {
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
+    top: 0px;
+  }
+
+  .entry {
+    color: white !important;
+  }
+
+  .selected:before, .selected:before {
+    height: 18px !important;
+    border-left: none !important;
+    background: green !important;
+  }
+}
+
+.list-group li:not(.list-nested-item),
+.list-tree li:not(.list-nested-item),
+.list-group li.list-nested-item > .list-item,
+.list-tree li.list-nested-item > .list-item {
+  line-height:18px;
+}
+
+.list-group .selected:before,
+.list-tree .selected:before {
+  height:18px;
+}
+
+.list-tree.has-collapsable-children .list-nested-item > .list-tree > li,
+.list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+  padding-left:8px;
+}
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  font-family: 'Ubuntu Mono';
+  font-size: 12px;
+  background-color: black;
+
+  .scroll-view {
+    padding-left: 0;
+  }
+}
+
+atom-text-editor::shadow .scroll-view {
+  padding-left: 0;
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+atom-text-editor::shadow .cursor {
+  border-color: white !important;
+  border-width: 2px !important;
+}
+
+.status-bar {
+  background-color: black;
+}
+
+.tree-view-resizer, atom-text-editor::shadow  {
+  ::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+
+    &-thumb, &-corner {
+      border-radius: 6px !important;
+      background-color: rgba(255,255,255,0.75) !important;
+      &:hover {
+        background-color: white !important;
+      }
+    }
+  }
+}
